@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/widgets/custom_show_model_bottomsheet.dart';
+
 import 'package:note_app/widgets/notes_body.dart';
 
 class Homepage extends StatelessWidget {
@@ -9,9 +11,18 @@ class Homepage extends StatelessWidget {
     return Scaffold(
       body: const NotesBody(),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-      ),
+          onPressed: () {
+            // add ShowModelBottonSheet
+            showModalBottomSheet(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                context: context,
+                builder: (context) {
+                  return const AddNoteBottomSheet();
+                });
+          },
+          child: const Icon(Icons.add)),
     );
   }
 }
