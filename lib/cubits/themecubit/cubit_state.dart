@@ -1,1 +1,1 @@
-enum ThemeCubitState { dart, light }
+enum ThemeCubitState { dark, light }
