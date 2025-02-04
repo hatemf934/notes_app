@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key});
@@ -10,7 +11,7 @@ class CustomButton extends StatelessWidget {
       child: ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              backgroundColor: const Color.fromARGB(255, 21, 225, 225),
+              backgroundColor: kPrimaryColor,
               foregroundColor: Colors.black,
               textStyle: const TextStyle(
                 fontSize: 20,

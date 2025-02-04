@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/constants.dart';
 
 class CustomTextFiled extends StatelessWidget {
   const CustomTextFiled({super.key, required this.hint, this.maxlines = 1});
@@ -8,15 +9,14 @@ class CustomTextFiled extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       maxLines: maxlines,
-      cursorColor: const Color.fromARGB(255, 21, 225, 225),
-      style: const TextStyle(color: Color.fromARGB(255, 21, 225, 225)),
+      cursorColor: kPrimaryColor,
+      style: const TextStyle(color: kPrimaryColor),
       decoration: InputDecoration(
         contentPadding:
             const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
         hintText: hint,
         enabledBorder: buildOutLineBorder(),
-        focusedBorder:
-            buildOutLineBorder(const Color.fromARGB(255, 21, 225, 225)),
+        focusedBorder: buildOutLineBorder(kPrimaryColor),
       ),
     );
   }
