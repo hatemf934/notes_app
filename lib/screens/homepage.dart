@@ -6,8 +6,12 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: NotesBody(),
+    return Scaffold(
+      body: const NotesBody(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+      ),
     );
   }
 }
