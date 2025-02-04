@@ -24,7 +24,7 @@ class NoteApp extends StatelessWidget {
             theme: state == ThemeCubitState.dark
                 ? ModelTheme().darkmode
                 : ModelTheme().lightmode,
-            home: Homepage(),
+            home: const Homepage(),
             debugShowCheckedModeBanner: false,
           );
         },
