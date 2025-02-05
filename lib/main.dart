@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/themecubit/cubit_state.dart';
 import 'package:note_app/cubits/themecubit/cubit_theme.dart';
 import 'package:note_app/models/model_theme.dart';
+import 'package:note_app/screens/edit_note_view.dart';
 import 'package:note_app/screens/homepage.dart';
 
 void main() {
@@ -21,10 +22,14 @@ class NoteApp extends StatelessWidget {
       child: BlocBuilder<ThemeCubit, ThemeCubitState>(
         builder: (context, state) {
           return MaterialApp(
+            initialRoute: Homepage.id,
+            routes: {
+              Homepage.id: (context) => const Homepage(),
+              EditNoteView.id: (context) => const EditNoteView(),
+            },
             theme: state == ThemeCubitState.dark
                 ? ModelTheme().darkmode
                 : ModelTheme().lightmode,
-            home: const Homepage(),
             debugShowCheckedModeBanner: false,
           );
         },

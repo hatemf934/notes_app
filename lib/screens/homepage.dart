@@ -5,6 +5,7 @@ import 'package:note_app/widgets/notes_body.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
+  static String id = "homepage";
 
   @override
   Widget build(BuildContext context) {
