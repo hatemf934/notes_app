@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:note_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key});
-
+  const CustomButton({super.key, this.onpressed});
+  final Function()? onpressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onpressed,
           style: ElevatedButton.styleFrom(
               backgroundColor: kPrimaryColor,
               foregroundColor: Colors.black,
