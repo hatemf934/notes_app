@@ -25,7 +25,7 @@ class _NoteFormViewState extends State<NoteFormView> {
           CustomTextFiled(
             onsave: (value) => {title = value},
             validate: (value) {
-              if (value?.isEmpty ?? true) {
+              if (value == null || value.trim().isEmpty) {
                 return "field is required";
               } else {
                 return null;
@@ -39,7 +39,7 @@ class _NoteFormViewState extends State<NoteFormView> {
           CustomTextFiled(
             onsave: (value) => {subTitle = value},
             validate: (value) {
-              if (value?.isEmpty ?? true) {
+              if (value == null || value.trim().isEmpty) {
                 return "field is required";
               } else {
                 return null;
