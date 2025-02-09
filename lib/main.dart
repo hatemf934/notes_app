@@ -4,6 +4,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/constants.dart';
 import 'package:note_app/cubits/themecubit/cubit_state.dart';
 import 'package:note_app/cubits/themecubit/cubit_theme.dart';
+import 'package:note_app/models/model_notes.dart';
 import 'package:note_app/models/model_theme.dart';
 import 'package:note_app/screens/edit_note_view.dart';
 import 'package:note_app/screens/homepage.dart';
@@ -11,6 +12,7 @@ import 'package:note_app/screens/homepage.dart';
 void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kNotesHive);
+  Hive.registerAdapter(ModelNotesAdapter());
   runApp(
     const NoteApp(),
   );
