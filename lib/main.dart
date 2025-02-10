@@ -14,8 +14,8 @@ import 'package:note_app/simple_bloc_observe.dart';
 void main() async {
   Bloc.observer = SimpleBlocObserve();
   await Hive.initFlutter();
-  await Hive.openBox(kNotesHive);
   Hive.registerAdapter(ModelNotesAdapter());
+  await Hive.openBox(kNotesHive);
   runApp(
     const NoteApp(),
   );
@@ -30,9 +30,6 @@ class NoteApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => ThemeCubit(),
-        ),
-        BlocProvider(
-          create: (context) => NotesCubit(),
         ),
       ],
       child: BlocBuilder<ThemeCubit, ThemeCubitState>(
