@@ -15,6 +15,7 @@ class Homepage extends StatelessWidget {
           onPressed: () {
             // add ShowModelBottonSheet
             showModalBottomSheet(
+                isScrollControlled: true,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
