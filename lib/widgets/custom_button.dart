@@ -17,8 +17,9 @@ class CustomButton extends StatelessWidget {
                 textStyle: const TextStyle(
                   fontSize: 20,
                 ),
-                padding:
-                    const EdgeInsets.symmetric(vertical: 16, horizontal: 177),
+                padding: EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: MediaQuery.of(context).devicePixelRatio),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 )),
