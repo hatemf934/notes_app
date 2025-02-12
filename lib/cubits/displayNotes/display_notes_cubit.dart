@@ -12,5 +12,6 @@ class DisplayNotesCubit extends Cubit<DisplayNotesState> {
   displayNote() {
     var display = Hive.box<ModelNotes>(kNotesHive);
     notes = display.values.toList();
+    emit(DisplayNotesSuccess());
   }
 }
