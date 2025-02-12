@@ -14,7 +14,7 @@ class NoteTips extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, EditNoteView.id);
+        Navigator.pushNamed(context, EditNoteView.id, arguments: note);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),

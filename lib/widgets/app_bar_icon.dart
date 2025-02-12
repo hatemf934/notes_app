@@ -3,12 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/cubits/themecubit/cubit_theme.dart';
 
 class AppBarIcons extends StatelessWidget {
-  const AppBarIcons({super.key, required this.icon});
+  const AppBarIcons({super.key, required this.icon, this.onPressed});
   final IconData icon;
+  final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return Container(
-     
       decoration: BoxDecoration(
         color: Colors.white.withOpacity(.05),
         borderRadius: BorderRadius.circular(24),
@@ -24,7 +24,9 @@ class AppBarIcons extends StatelessWidget {
                   Icons.dark_mode,
                   size: 30,
                 )),
-            IconButton(onPressed: () {}, icon:Icon(
+            IconButton(
+                onPressed: onPressed,
+                icon: Icon(
                   icon,
                   size: 30,
                 )),

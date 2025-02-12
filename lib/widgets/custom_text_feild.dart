@@ -7,10 +7,12 @@ class CustomTextFiled extends StatelessWidget {
       required this.hint,
       this.maxlines = 1,
       this.onsave,
-      this.validate});
+      this.validate,
+      this.onchange});
   final String hint;
   final int maxlines;
   final Function(String?)? onsave;
+  final Function(String)? onchange;
   final String? Function(String?)? validate;
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class CustomTextFiled extends StatelessWidget {
       onSaved: onsave,
       validator: validate,
       maxLines: maxlines,
+      onChanged: onchange,
       cursorColor: kPrimaryColor,
       style: const TextStyle(color: kPrimaryColor),
       decoration: InputDecoration(
